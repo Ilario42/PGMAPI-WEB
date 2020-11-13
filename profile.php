@@ -151,8 +151,8 @@ echo '
 						  <div class="col-md-3">
 							 <div class="row marginfix">
 								<div class="col-sm-6">
-								   <h3>
-									  <small>Versione Web 1.0</small>
+								   <h3 id="AutoRefresh">
+									  
 								   </h3>
 								</div>
 							 </div>
@@ -161,7 +161,7 @@ echo '
 							 <div class="row marginfix">
 								<div class="col-sm-6">
 								   <h3>
-									  <small>Versione Plugin 1.0</small>
+									  <small>Version 1.0</small>
 									  
 								   </h3>
 								</div>

@@ -1,13 +1,14 @@
 <?php
 error_reporting(0);
 ini_set('display_errors', 0);
+//error_reporting(E_ALL);
 require ("../../config.php");
 /*$stmt = $link->prepare("SELECT * FROM `users` WHERE `Player` = ?");
 $stmt->bind_param("s", $keyws);
 $keyws = $_POST["user"];
 $stmt->execute();
 $stmt->bind_result($ID, $Player, $Rank, $Online, $LastLogin, $Coins, $Kills, $Deaths, $Wins, $Losts);*/
-$query ="SELECT * FROM `users` WHERE `Player` = '".$_POST["user"]."'";
+$query ="SELECT * FROM `Users` WHERE `Player` = '".$_POST["user"]."'";
 $result = $link->query($query);	
 $row = $result->fetch_assoc();
 if ($row["Player"] == null) {
@@ -29,7 +30,7 @@ if ($row["Player"] == null) {
 			"JoinedTeams" => "0",
 			"TntPlaced" => "0",
 			"Users" => "0",
-			"PageUpdated" => date("H:m"),
+			"PageUpdated" => date("H:i"),
 		),
 	);
 } else {
@@ -56,6 +57,7 @@ if ($row["Player"] == null) {
 	$firstlogin = new DateTime($row["FirstLogin"]);
 	$firstloginn = new DateTime(date());
 	$timelogin = $firstlogin->diff($firstloginn);
+	
 	$arr = array(
 		array(
 			"User" => $row["Player"],
@@ -74,7 +76,7 @@ if ($row["Player"] == null) {
 			"JoinedTeams" => $row["TeamsJoins"],
 			"TntPlaced" => $row["TntPlaced"],
 			"Users" => "0",
-			"PageUpdated" => date("H:m"),
+			"IP" => $_SERVER['REMOTE_ADDR'],
 		),
 	);
 }

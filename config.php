@@ -1,6 +1,8 @@
 <?php
-/* FIRST READ DOCUMENTATIONS AT: https://www.ilariochiera.it/documentations/pgmapi/ */
-/* THE GRAPHICS OF THE SITE ARE COPIED BY OCN AND STRATUS NETWORK. THE CODE IS OPEN SOURCE, YOU CAN HELP ME IMPROVE IT ❤ */
+/* FIRST READ DOCUMENTATIONS AT: https://www.ilariochiera.it/documentations/pgmapi/ 
+ * THE GRAPHICS OF THE SITE ARE COPIED BY OCN AND STRATUS NETWORK. THE CODE IS OPEN SOURCE, 
+ * YOU CAN HELP ME IMPROVE IT ❤ 
+ */
 
 /* GENERAL INFO WEBSITE/SERVER. EDIT ONLY "this" */
 $name = "PGM SERVER"; //SERVER NAME
@@ -13,7 +15,7 @@ $homebuttonurl = "https://www.pgmapiserver.it/home"; //HOME URL (Your Website)
 /* STARTING DATABASE. EDIT ONLY "this" NOT CHANGE FOR DEFAULT */
 $servername = "localhost";
 $username = "Server";
-$password = "YourPassword";
+$password = "";
 $dbname = "pgmapi";
 /* AVVIO QUERY  WARN: NOT EDIT*/
 $link = new mysqli($servername, $username, $password, $dbname);

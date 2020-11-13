@@ -13,7 +13,8 @@ function userstatus(user) {
 		beforeSend: function(){},
 		success: function(data){
 			for (i = 0; i < data.length; i++) {
-				//$("#proghajx").html(data[i]);	
+				//$("#proghajx").html(data[i]);
+				var d = new Date();
 				var UserName = data[i].User;
 				var UserID = data[i].UserID;
 				var Online = data[i].Online;
@@ -30,7 +31,10 @@ function userstatus(user) {
 				var JoinedTeams = data[i].JoinedTeams;
 				var TntPlaced = data[i].TntPlaced;
 				var GlobalUsers = data[i].Users;
-				var PageInfoUpdate = data[i].PageUpdated;
+				var hour = d.getHours();
+				var minute = d.getMinutes();
+				if (hour.toString().length < 2) hour = '0' + hour;
+				if (minute.toString().length < 2) minute = '0' + minute;
 				if (LastLogin != "Online") {
 					$("#statusonline").html('Last seen <strong>' + LastLogin + '</strong> on <strong>' + Online + '</strong>');
 				} else {
@@ -45,12 +49,13 @@ function userstatus(user) {
 				$("#coinsuser").html(Coins);
 				$("#winsuser").html(Wins);
 				$("#lostsuser").html(Deaths);
-				$("#FirstJoin").html(FirstLogin + "<small> days since first seen</small>");
+				$("#FirstJoin").html(FirstLogin + "<small> days since first join</small>");
 				$("#TimePlayed").html(TimePlayed + "<small> hours played</small>");
 				$("#TeamsJoins").html(JoinedTeams + "<small> teams joined</small>");
-				$("#TntPlaced").html(TntPlaced + "<small> tnt's places</small>");
+				$("#TntPlaced").html(TntPlaced + "<small> TNT's places</small>");
 				$("#RanksInfo").html(Rank + "<small> rank</small>");
 				$("#ServersInfo").html(LastLogin + "<small> user login</small>");
+				$("#AutoRefresh").html(hour + ":" + minute + "<small> Updated </small>");
 				
 			}
 			UserOnline();
